@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&family=Titillium+Web:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Multi Step Form</title>
+  </head>
+  <body>
+    <main id="app">
+      <form>
+        <div class="step-progress active">
+          <strong class="active " data-step>Contato</strong>
+          <img src="assets/icons.svg" alt="seta" />
+          <strong class="" data-step>Empresa</strong>
+          <img src="assets/icons.svg" alt="seta" />
+          <strong class="" data-step>Projeto</strong>
+        </div>
+        <div class="form-step active">
+          <div class="content">
+            <div class="input-wrapper">
+              <label for="name">Nome</label>
+              <input
+                type="text"
+                name="name"
+                id="name"
+                placeholder="Como prefere ser chamado"
+                required
+              />
+            </div>
+            <div class="input-wrapper">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Digite seu e-mail"
+                required
+              />
+            </div>
+            <div class="input-wrapper">
+              <label for="phone">Telefone</label>
+              <input
+                type="text"
+                name="phone"
+                id="phone"
+                placeholder="Digite seu whatsapp"
+                onkeypress="return /\d/.test(event.key)"
+              />
+            </div>
+            <div class="button-wrapper justify-end">
+              <button class="btn primary" type="button" data-action="next">
+                CONTINUAR
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-step hide">
+          <div class="content">
+            <div class="input-wrapper">
+              <label for="business-name">Nome da Empresa</label>
+              <input
+                type="text"
+                name="business-name"
+                id="business-name"
+                placeholder="Qual o nome da Empresa"
+              />
+            </div>
+            <div class="input-wrapper">
+              <label for="business-colab">Número de Funcionarios</label>
+              <input
+                type="text"
+                name="business-colab"
+                id="business-colab"
+                placeholder="Dígite o numero de colaboradores"
+                onkeypress="return /\d/.test(event.key)"
+              />
+            </div>
+            <div class="input-wrapper">
+              <label for="business-about">Sobre seu negócio</label>
+              <textarea
+                name="business-about"
+                id="business-about"
+                placeholder="Fale um pouco sobre seus produtos e serviços"
+              ></textarea>
+            </div>
+            <div class="button-wrapper">
+              <button class="btn secundary" type="button" data-action="prev">
+                VOLTAR
+              </button>
+              <button class="btn primary" type="button" data-action="next">
+                CONTINUAR
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="form-step hide">
+          <div class="content">
+            <div class="input-wrapper">
+              <label for="project">Objetivos do Projeto</label>
+              <textarea
+                name="project"
+                id="project"
+                placeholder="descreva quais os objetivos do projeto"
+              ></textarea>
+            </div>
+            <div class="button-wrapper">
+              <button class="btn secundary" data-action="prev" type="button">
+                VOLTAR
+              </button>
+              <button class="btn primary" type="submit">ENVIAR RESPOSTA</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
