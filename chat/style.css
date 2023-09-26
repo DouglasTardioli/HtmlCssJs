@@ -1,0 +1,152 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-oxs-font-smoothing: grayscale;
+}
+
+:root {
+    font-size: 62.5%;
+}
+
+body {
+  background-color: #1a1924;
+  font-size: 1.6rem;
+  color: #e1e1e6;
+  height: 100vh;
+  overflow: hidden;
+}
+
+body * {
+    font-family: 'Roboto', sans-serif;
+}
+
+#app {
+    padding: 2.4rem 3.2rem;
+
+    height: 100vh;
+    width: 100vw;
+    max-width: 880px;
+    margin: auto;
+    display: grid;
+    grid-template-rows: max-content 1fr max-content;
+}
+
+#user-info {
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+}
+
+#top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#close-chat {
+    cursor: pointer;
+}
+
+#user-status .status::before {
+    content: "";
+    width: 0.8rem;
+    height: 0.8rem;
+    display: block;
+    background:#00B373;
+    border-radius: 50%;
+}
+
+#user-status .status {
+    display: flex;
+    align-items: baseline;
+    gap: 0.4rem;
+    margin-top: .4rem;
+    color: #00B373;
+    font-size: 1.2rem;
+}
+
+#last-seen {
+    margin-top: 2.6rem;
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    text-align: center;
+}
+
+#messages {
+    overflow-y: scroll;
+    padding-bottom: 2.4rem;
+}
+
+#messages::-webkit-scrollbar {
+    display: none;
+}
+
+.messages {
+    margin-top: 3rem;
+    display: grid;
+    gap: 3rem;
+    font-size: 1.6rem;
+    line-height: 1.4rem;
+}   
+
+.message.you {
+    margin-left: auto;
+}
+
+.message .body-message {
+    width: fit-content;
+    margin-top: 1rem;
+    background-color: #633BBC;
+    padding: 1.4rem;
+    border-radius: 0 .8rem .8rem .8rem;
+}
+
+.message:not(.you){
+    width: 50vw;
+}
+.message.you .top-date {
+
+    text-align: right;
+}
+
+.message.you .body-message {
+    background-color: #07847e;
+    border-radius: .8rem .8rem 0rem .8rem;
+
+}
+
+form {
+    display: flex;
+    align-items: center;
+    background: #282843;
+    border-radius: 999rem;
+    padding: 1.4rem 2.4rem;
+}
+
+ input {
+    flex: 1;
+    outline: none;
+    color: #e1e1e6;
+}
+
+ input::placeholder {
+    color: #e1e1e6;
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+}
+
+form:focus-within {
+    outline: 2px solid white;
+}
+
+form button img {
+    cursor: pointer;
+}
+
+input, button {
+
+    background: transparent;
+    border: 0;
+}
